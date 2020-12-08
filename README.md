@@ -11,7 +11,7 @@ A php sdk to interface with (https://institution.itsourceproviders.com//)
   - ITSourceProviders\Institution\Level
 
 
-You can pull your data and display information on your personal website about `Subject`s offered at different levels and in different `InstitutionClass`s. 
+You can pull your data and display information on your personal website about `Subject` s offered at different levels and in different `InstitutionClass` s. 
 
 
 ### Installation
