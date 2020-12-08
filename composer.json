@@ -1,0 +1,16 @@
+{
+    "name": "wwwitsourceproviders/institution",
+    "type": "library",
+    "license": "MIT",
+"autoload": {
+    "psr-4": {
+        "ITSourceProviders\\Institution\\": "wwwitsourceproviders/Institution/"
+    }
+},
+    "require": {
+    },
+    "require-dev": {
+        "firebase/php-jwt": "^5.2.0",
+        "guzzlehttp/guzzle": "^7.2.0"
+    }
+}
