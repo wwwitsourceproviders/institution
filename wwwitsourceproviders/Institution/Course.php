@@ -61,6 +61,12 @@ class Course {
         self::$pager->setParameters($parameters);
     }
 
+    public function google_id() {
+        $response = \ITSourceProviders\Institution\Config\Setting::get('/course/'.$this->course_id.'/google_id', $parameters);
+        $data = \ITSourceProviders\Institution\Query\ResultSet::parse($response->body);
+	return $data['google_id'];
+    }
+
     public static function get() {
         $data = self::$pager->set();
         $len = count($data);
