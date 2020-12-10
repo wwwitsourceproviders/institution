@@ -18,8 +18,10 @@ class Setting {
     ) {
         try {
             $parameters['institution_id'] = Setting::$credentials['institution_id'];
+	    $time = time();
             $payload = array(
-                'institution_id' => $parameters['institution_id']
+                'institution_id' => $parameters['institution_id'],
+		'exp'=>$time+60
             );
             $jwt = \Firebase\JWT\JWT::encode($payload, Setting::$credentials['key'], 'RS256');
             $client = new \GuzzleHttp\Client([
