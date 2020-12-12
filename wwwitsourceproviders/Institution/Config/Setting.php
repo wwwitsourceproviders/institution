@@ -17,15 +17,15 @@ class Setting {
             $parameters
     ) {
         try {
-            $parameters['institution_id'] = Setting::$credentials['institution_id'];
+            $parameters['institution_id'] = \ITSourceProviders\Institution\Config\Setting::$credentials['institution_id'];
 	    $time = time();
             $payload = array(
                 'institution_id' => $parameters['institution_id'],
-		'exp'=>$time+60
+		'exp'=>$time+3600
             );
-            $jwt = \Firebase\JWT\JWT::encode($payload, Setting::$credentials['key'], 'RS256');
+            $jwt = \Firebase\JWT\JWT::encode($payload, \ITSourceProviders\Institution\Config\Setting::$credentials['key'], 'RS256');
             $client = new \GuzzleHttp\Client([
-                'base_uri' => Setting::$base
+                'base_uri' => \ITSourceProviders\Institution\Config\Setting::$base
             ]);
             $response = $client->request('GET', '/v1.1/private' . $link, [
                 'headers' => [
