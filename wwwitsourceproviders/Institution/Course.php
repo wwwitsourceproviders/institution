@@ -64,7 +64,7 @@ class Course {
     public function google_id() {
         $response = \ITSourceProviders\Institution\Config\Setting::get('/course/'.$this->course_id.'/google_id', $parameters);
         $data = \ITSourceProviders\Institution\Query\ResultSet::parse($response->body);
-	return $data['google_id'];
+	return $data[0]['google_id'];
     }
 
     public static function get() {
